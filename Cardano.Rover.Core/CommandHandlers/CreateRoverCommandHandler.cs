@@ -1,9 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Cardano.Rover.Core.Commands.External;
 using Cardano.Rover.Core.Enums;
 
-namespace Cardano.Rover.Core
+namespace Cardano.Rover.Core.CommandHandlers
 {
 	public class CreateRoverCommandHandler
 	{

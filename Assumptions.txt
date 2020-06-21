@@ -1,8 +1,8 @@
 1. Each new command will recreate the grid since the command includes the grid size
-2. The rover does need to be persisted between grid recreations
-3. Ever new "set" in a command means the creation of a new rover. no later commands can apply to a rover that was created before.
+2. The rover does not need to be persisted between grid recreations
+3. Every new "set" in a command means the creation of a new rover. no later commands can apply to a rover that was created before.
 4. Grids start at 1,1 and therefore coordinates cannot be less than 0
 5. two rovers cannot inhabit the same part of he grid.
-6. Commands Are processed in sequence and on single thread i.e. i don't intialise all the rovers first
-7. The command string is deleminted by spaces and each new section is delemited by a new line.
-8. The grid size cannot exceed an integers amount
+6. Commands Are processed in sequence and on single thread.
+7. The command string is delimited by spaces and each new section is delimited by a new line.
+8. The grid size cannot exceed an integers size

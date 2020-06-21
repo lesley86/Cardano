@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Cardano.Rover.Core;
+using Cardano.Rover.Core.CommandHandlers;
 
 namespace Cardano.ConsoleHost
 {

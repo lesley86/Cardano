@@ -1,5 +1,6 @@
 using AutoFixture;
 using Cardano.Rover.Core;
+using Cardano.Rover.Core.Commands.External;
 using Cardano.Rover.Core.Enums;
 using NUnit.Framework;
 

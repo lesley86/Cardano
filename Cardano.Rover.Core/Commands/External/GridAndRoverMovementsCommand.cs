@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Cardano.Rover.Core.Commands
+namespace Cardano.Rover.Core.Commands.External
 {
 	public class GridAndRoverMovementsCommand
 	{

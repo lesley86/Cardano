@@ -1,3 +1,4 @@
+using Cardano.Rover.Core.Commands.External;
 using Cardano.Rover.Core.Commands.Internal;
 
 namespace Cardano.Rover.Core

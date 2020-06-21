@@ -1,6 +1,6 @@
-using Cardano.Rover.Core.Commands;
+using Cardano.Rover.Core.Commands.External;
 
-namespace Cardano.Rover.Core
+namespace Cardano.Rover.Core.CommandHandlers
 {
 	public class CreateGridCommandHandler
 	{

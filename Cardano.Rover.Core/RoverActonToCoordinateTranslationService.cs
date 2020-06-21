@@ -1,3 +1,4 @@
+using Cardano.Rover.Core.Commands.External;
 using Cardano.Rover.Core.Commands.Internal;
 using Cardano.Rover.Core.Enums;
 

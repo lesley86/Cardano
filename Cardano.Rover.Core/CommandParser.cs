@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Cardano.Rover.Core.Commands;
+using Cardano.Rover.Core.Commands.External;
 using Cardano.Rover.Core.Enums;
 using Cardano.Rover.Core.Exceptions;
 

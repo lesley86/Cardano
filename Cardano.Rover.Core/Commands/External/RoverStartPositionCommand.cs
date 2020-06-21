@@ -1,6 +1,6 @@
 using Cardano.Rover.Core.Enums;
 
-namespace Cardano.Rover.Core
+namespace Cardano.Rover.Core.Commands.External
 {
 	public class RoverStartPositionCommand
 	{

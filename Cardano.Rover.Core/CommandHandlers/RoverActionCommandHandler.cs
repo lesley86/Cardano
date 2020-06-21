@@ -1,11 +1,9 @@
-using System;
 using System.Linq;
-using System.Text;
-using Cardano.Rover.Core.Commands;
+using Cardano.Rover.Core.Commands.External;
 using Cardano.Rover.Core.Enums;
 using Cardano.Rover.Core.Exceptions;
 
-namespace Cardano.Rover.Core
+namespace Cardano.Rover.Core.CommandHandlers
 {
 	public class RoverActionCommandHandler
 	{
@@ -40,11 +38,11 @@ namespace Cardano.Rover.Core
 							roverStateChangeCommand.XCoordinate);
 						_roverProvider.SaveRoverMovement(rover.RoverId, roverStateChangeCommand);
 					}
-					catch (RoverWillDriveOffGridException e)
+					catch (RoverWillDriveOffGridException)
 					{
 						_roverProvider.UpdateRoverStatus(roverCommands.RoverId, RoverStatus.HelpRequired);
 					}
-					catch (GridSpaceOccupiedException e)
+					catch (GridSpaceOccupiedException)
 					{
 						_roverProvider.UpdateRoverStatus(roverCommands.RoverId, RoverStatus.HelpRequired);
 					}
