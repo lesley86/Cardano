@@ -7,52 +7,24 @@ using Cardano.Rover.Core.Exceptions;
 
 namespace Cardano.Rover.Core
 {
-	public class RoverService
+	public class RoverActionCommandHandler
 	{
-		private readonly ICommandParser _commandParser;
 		private readonly IMarsRoverGrid _marsRoverGrid;
 		private readonly IRoverActonToCoordinateTranslationService _roverActonToCoordinateTranslationService;
 		private readonly IRoverProvider _roverProvider;
 
-		public RoverService(
-			ICommandParser commandParser,
+		public RoverActionCommandHandler(
 			IMarsRoverGrid marsRoverGrid,
 			IRoverActonToCoordinateTranslationService roverActonToCoordinateTranslationService,
 			IRoverProvider roverProvider)
 		{
-			_commandParser = commandParser;
 			_marsRoverGrid = marsRoverGrid;
 			_roverActonToCoordinateTranslationService = roverActonToCoordinateTranslationService;
 			_roverProvider = roverProvider;
 		}
 
 
-		public void InteractWithRover(string roverCommand)
-		{
-			var command = _commandParser.CreateCommandsFrom(roverCommand);
-			_marsRoverGrid.SetMarsRoverGridBoundary(command.GridSize.Y, command.GridSize.X);
-			CreateRover(command);
-			ExecuteRoverActions(command);
-		}
-		
-		public string GetRoverInformation()
-		{
-			var rovers = _roverProvider.GetAllRovers();
-			var sb = new StringBuilder();
-			foreach (var rover in rovers)
-			{
-				sb.Append($"" +
-						$"Rover's y coordinate: {rover.GridPosition.Y}, " +
-						$"Rover's x coordinate: {rover.GridPosition.X}, " +
-						$"Rover's direction: {rover.RoverFacingDirection}, " +
-						$"Rover's status: {rover.RoverStatus.ToString()}" +
-						$"{Environment.NewLine}");
-			}
-
-			return sb.ToString();
-		}
-
-		private void ExecuteRoverActions(GridAndRoverMovementsCommand command)
+		public void Handle(GridAndRoverMovementsCommand command)
 		{
 			foreach (var roverCommands in command.RoverMovementCommands.OrderBy(x => x.RoverCreationOrder))
 			{
@@ -77,22 +49,6 @@ namespace Cardano.Rover.Core
 						_roverProvider.UpdateRoverStatus(roverCommands.RoverId, RoverStatus.HelpRequired);
 					}
 				}
-			}
-		}
-
-		private void CreateRover(GridAndRoverMovementsCommand command)
-		{
-			foreach (var roverCommands in command.RoverMovementCommands.OrderBy(x => x.RoverCreationOrder))
-			{
-				var gridPosition = new YAndXCoordinate
-				{
-					X = roverCommands.RoverStartPositionCommand.GridPosition.X,
-					Y = roverCommands.RoverStartPositionCommand.GridPosition.Y
-				};
-				var varRoverId = _roverProvider.CreateARover(gridPosition, RoverStatus.Operational,
-					roverCommands.RoverStartPositionCommand.RoverFacingDirection);
-				roverCommands.RoverId = varRoverId;
-
 			}
 		}
 	}

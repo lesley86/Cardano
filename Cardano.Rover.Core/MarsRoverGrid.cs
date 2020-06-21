@@ -3,16 +3,6 @@ using Cardano.Rover.Core.Exceptions;
 
 namespace Cardano.Rover.Core
 {
-	public interface IMarsRoverGrid
-	{
-		int? GetFloorSpaceLength();
-		int? GetGridWidth();
-
-		void MoveRoverTo(Entities.Rover rover, int destinationYCoordinate, int destinationXCoordinate);
-		
-		void SetMarsRoverGridBoundary(int length, int breadth);
-	}
-
 	public class MarsRoverGrid : IMarsRoverGrid
 	{
 		private FloorSpaceStatus[,] _roverFloorSpace2dArray;
@@ -43,6 +33,14 @@ namespace Cardano.Rover.Core
 		public void SetMarsRoverGridBoundary(int length, int breadth)
 		{
 			_roverFloorSpace2dArray = new FloorSpaceStatus[length, breadth];
+		}
+
+		public void SetRoverStartPosition(int yCoordinate, int xCoordinate)
+		{
+			ValidateReceivedCoordinatesIntegrity(yCoordinate, xCoordinate);
+			ValidateCoordinatesAreWithInBoundary(yCoordinate, xCoordinate);
+			_roverFloorSpace2dArray[yCoordinate, xCoordinate] = FloorSpaceStatus.Occupied;
+			
 		}
 
 		private void ValidateCoordinatesAreWithInBoundary(int yCoordinate, int xCoordinate)
