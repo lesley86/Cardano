@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cardano.Rover.Core", "Cardano.Rover.Core\Cardano.Rover.Core.csproj", "{E5A87869-A32A-428C-A5D3-85E24B6C3CE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cardano.Core.UnitTests", "Cardano.Core.UnitTests\Cardano.Core.UnitTests.csproj", "{E44F54F5-E29B-4917-9E07-5FDB5FF83072}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cardano.ConsoleHost", "Cardano.ConsoleHost\Cardano.ConsoleHost.csproj", "{032016EA-5ADC-4462-9086-951EE9355419}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5A87869-A32A-428C-A5D3-85E24B6C3CE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5A87869-A32A-428C-A5D3-85E24B6C3CE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5A87869-A32A-428C-A5D3-85E24B6C3CE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5A87869-A32A-428C-A5D3-85E24B6C3CE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E44F54F5-E29B-4917-9E07-5FDB5FF83072}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E44F54F5-E29B-4917-9E07-5FDB5FF83072}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E44F54F5-E29B-4917-9E07-5FDB5FF83072}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E44F54F5-E29B-4917-9E07-5FDB5FF83072}.Release|Any CPU.Build.0 = Release|Any CPU
+		{032016EA-5ADC-4462-9086-951EE9355419}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{032016EA-5ADC-4462-9086-951EE9355419}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{032016EA-5ADC-4462-9086-951EE9355419}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{032016EA-5ADC-4462-9086-951EE9355419}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
