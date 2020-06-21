@@ -39,6 +39,7 @@ namespace Cardano.Rover.Core
 		{
 			ValidateReceivedCoordinatesIntegrity(yCoordinate, xCoordinate);
 			ValidateCoordinatesAreWithInBoundary(yCoordinate, xCoordinate);
+			ValidateIfDestinationIsOccupied(yCoordinate, xCoordinate);
 			_roverFloorSpace2dArray[yCoordinate, xCoordinate] = FloorSpaceStatus.Occupied;
 			
 		}
@@ -68,7 +69,7 @@ namespace Cardano.Rover.Core
 		{
 			if (_roverFloorSpace2dArray[yCoordinate, xCoordinate] == FloorSpaceStatus.Occupied)
 			{
-				throw new FloorSpaceOccupiedException("Something else is already in this floor space");
+				throw new GridSpaceOccupiedException("Something else is already in this floor space");
 			}
 		}
 

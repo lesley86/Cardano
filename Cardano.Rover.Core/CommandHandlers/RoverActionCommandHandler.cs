@@ -44,7 +44,7 @@ namespace Cardano.Rover.Core
 					{
 						_roverProvider.UpdateRoverStatus(roverCommands.RoverId, RoverStatus.HelpRequired);
 					}
-					catch (FloorSpaceOccupiedException e)
+					catch (GridSpaceOccupiedException e)
 					{
 						_roverProvider.UpdateRoverStatus(roverCommands.RoverId, RoverStatus.HelpRequired);
 					}
